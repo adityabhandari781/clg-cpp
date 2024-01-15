@@ -37,8 +37,16 @@ public:
 
 int main()
 {
-	Student s[4]{};
-	s[0].inputData();
+	cout << "How many students: ";
+	int studentNo;
+	cin >> studentNo;
+	Student s = new Student[studentNo];
+	for (int i = 0; i < studentNo; i++) {
+		s[i].input();
+		cout << "Average marks of student " << i << " : "<< s[i].avgMarks() << '\n';
+		s[i].display();
+		cout << '\n';
+	}
 }
 
 int Student::rollNo = 0;
