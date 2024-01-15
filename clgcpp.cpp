@@ -40,7 +40,7 @@ int main()
 	cout << "How many students: ";
 	int studentNo;
 	cin >> studentNo;
-	Student s = new Student[studentNo];
+	Student* s = new Student[studentNo];
 	for (int i = 0; i < studentNo; i++) {
 		s[i].input();
 		cout << "Average marks of student " << i << " : "<< s[i].avgMarks() << '\n';
@@ -339,7 +339,7 @@ public:
 		}
 
 		if (front == -1)
-			front = 0;
+			front = rear = 0;
 		else if (rear == size - 1 && front != 0)
 			rear = 0;
 		else
